@@ -6,18 +6,17 @@ namespace InternshipTest.Institution
     public class University
     {
         string Name { get; set; }
-        List<Student> students;
+        public List<Student> Students { get; private set; }
         public University(string name)
         {
             Name = name;
-            students = new List<Student>();
-            //TODO: Implementation is needed  
+            Students = new List<Student>();
         }
 
         public void AddStudent(Student student)
         {
-            students.Add(student);
-            //TODO: Implementation is needed
+            Students.Add(student);
         }
+        
     }
 }
