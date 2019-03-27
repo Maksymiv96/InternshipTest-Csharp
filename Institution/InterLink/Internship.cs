@@ -17,18 +17,16 @@ namespace InternshipTest.Institution.InterLink
         public void CreatingListOfIntern(University university)
         {
             double avg = university.Students.Average(x => x.Knowledge.Level);
-            foreach (Student st in university.Students)
-            {
-                if (st.Knowledge.Level > avg) Students.Add(st);
-            }
-            
-                            
+
+            Students = university.Students.Where(x => x.Knowledge.Level > avg).ToList();
+
+
         }
 
 
         public string GetStudents()
         {
-            return ("Andrew Maslenko\nJulia Veselkina\n" + String.Join('\n', Students));
+            return String.Join('\n', Students);
         }
     }
 }
